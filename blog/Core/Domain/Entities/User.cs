@@ -17,7 +17,7 @@ namespace Domain.Entities
         public string emailAdress { get; set; } 
         public string password { get; set; }
         public DateTime lastLogin { get; set; }
-        public int role { get; set; }
+        public string role { get; set; }
 
     }
 }

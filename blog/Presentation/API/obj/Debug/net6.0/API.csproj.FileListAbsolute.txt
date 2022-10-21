@@ -45,3 +45,10 @@ C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\Npgsql.dll
 C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\Persistence.dll
 C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\Persistence.pdb
+C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

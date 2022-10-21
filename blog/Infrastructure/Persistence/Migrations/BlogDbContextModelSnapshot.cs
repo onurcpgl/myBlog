@@ -55,8 +55,9 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("role")
-                        .HasColumnType("integer");
+                    b.Property<string>("role")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("userName")
                         .IsRequired()

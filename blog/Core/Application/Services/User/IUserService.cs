@@ -12,5 +12,6 @@ namespace Application.Services
     {
         Task<bool> saveUser(UserDto userDto);
         Task<User> getCategoryById(int id);
+        Task<User> loadByUser(LoginDto loginDto);
     }
 }
