@@ -17,7 +17,7 @@ namespace API.Controllers
         }
 
         [HttpPost("/user")]
-        public async Task<IActionResult> AddUser([FromBody] UserDto userDto)
+        public async Task<IActionResult> SaveUser([FromBody] UserDto userDto)
         {
             var result = await _userService.saveUser(userDto);
             if (!result)
