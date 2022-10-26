@@ -18,6 +18,7 @@ namespace Persistence.Contexts
         public DbSet<User> Users { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Article> Articles { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,6 +32,16 @@ namespace Persistence.Contexts
                 .Entity<Article>()
                 .HasOne(article => article.Category)
                 .WithMany(category => category.Article);
+
+            modelBuilder
+                .Entity<Article>()
+                .HasMany(article => article.Comments)
+                .WithOne(comment => comment.Article);
+
+            modelBuilder
+                .Entity<Comment>()
+                .HasOne(childComment => childComment.ParentComment)
+                .WithMany(commet => commet.ChildComment);  
         }
     }
 }

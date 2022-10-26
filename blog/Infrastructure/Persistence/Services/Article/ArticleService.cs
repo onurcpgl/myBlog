@@ -17,17 +17,25 @@ namespace Persistence.Services
     {
         private readonly IArticleReadRepository _articleReadRepository;
         private readonly IArticleWriteRepository _articleWriteRepository;
+        private readonly ICategoryReadRepository _categoryReadRepository;
         private readonly IMapper _mapper;
-        public ArticleService(IArticleReadRepository articleReadRepository, IArticleWriteRepository articleWriteRepository, IMapper mapper)
+        public ArticleService(IArticleReadRepository articleReadRepository, IArticleWriteRepository articleWriteRepository, ICategoryReadRepository categoryReadRepository, IMapper mapper)
         {
             _articleReadRepository = articleReadRepository;
             _articleWriteRepository = articleWriteRepository;
+            _categoryReadRepository = categoryReadRepository; 
             _mapper = mapper;
+        }
+
+        public async Task<List<Article>> articleList()
+        {
+            List<Article> articleList = await _articleReadRepository.GetAllWithInclude(true, x => x.Comments).ToListAsync();
+            return articleList;
         }
 
         public async Task<Article> getArticleListById(int id)
         {
-            var category = await _articleReadRepository.GetWhereWithInclude(x => x.Id == id, true, x => x.Category).FirstOrDefaultAsync();
+            var category = await _articleReadRepository.GetWhereWithInclude(x => x.Id == id, true, x => x.Category, x => x.Comments).FirstOrDefaultAsync();
             return category;
         }
 
@@ -35,6 +43,8 @@ namespace Persistence.Services
         {
             var article = _mapper.Map<Article>(articleDto);
             article.Code = Guid.NewGuid().ToString();
+            var getCategory = await _categoryReadRepository.GetByIdAsync(articleDto.CategoryId);
+            article.Category = getCategory;
             var result = await _articleWriteRepository.AddAsync(article);
             return result;
         }

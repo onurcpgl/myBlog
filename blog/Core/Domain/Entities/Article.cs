@@ -14,6 +14,8 @@ namespace Domain.Entities
         public string Contents { get; set; }
         public DateTime CreatedDate { get; set; }
         public Category Category { get; set; }
+        public ICollection<Comment> Comments { get; set; }
+
 
     }
 }

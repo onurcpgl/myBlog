@@ -28,7 +28,8 @@ namespace Persistence.Services
 
         public async Task<List<Category>> categoryList()
         {
-            List<Category> categories = await _categoryReadRepository.GetAllWithInclude(true, x => x.SubCategories, x => x.ParentCategory).ToListAsync();
+            List<Category> categories = await _categoryReadRepository.GetAllWithInclude(true, x => x.SubCategories, x => x.ParentCategory, x => x.Article).ToListAsync();
+           
             return categories;
         }
 

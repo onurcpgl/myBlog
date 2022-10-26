@@ -18,6 +18,7 @@ namespace Domain.Entities
         public string password { get; set; }
         public DateTime lastLogin { get; set; }
         public string role { get; set; }
+        public ICollection<Comment> comments { get; set; }
 
     }
 }

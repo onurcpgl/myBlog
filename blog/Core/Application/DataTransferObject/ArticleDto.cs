@@ -11,6 +11,6 @@ namespace Application.DataTransferObject
     {
         public string Title { get; set; }
         public string Contents { get; set; }
-        public Category CategoryId { get; set; }
+        public int CategoryId { get; set; }
     }
 }

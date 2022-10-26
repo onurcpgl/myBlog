@@ -13,6 +13,7 @@ namespace Application.Services
         Task<bool> saveArticle(ArticleDto articleDto);
         
         Task<Article> getArticleListById(int id);
+        Task<List<Article>> articleList();
 
     }
 }

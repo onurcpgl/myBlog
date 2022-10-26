@@ -30,6 +30,15 @@ namespace API.Controllers
         }
 
 
+        [HttpGet("/article")]
+        public async Task<IActionResult> ArticleList()
+        {
+            var result = await _articleService.articleList();
+            return Ok(result);  
+            
+        }
+
+
         [HttpGet("/article/{id}")]
         public async Task<IActionResult> GetArticleListById(int id)
         {
