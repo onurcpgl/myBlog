@@ -12,7 +12,7 @@ namespace Application.DataTransferObject
         public string Text { get; set; }
         public int UserId { get; set; }
         public int? ParentCommentId { get; set; }
-        public int ArticleId { get; set; }
+        public int? ArticleId { get; set; }
 
     }
 }

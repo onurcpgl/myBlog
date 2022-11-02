@@ -96,7 +96,8 @@ namespace Persistence.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("ArticleId")
+                    b.Property<int?>("ArticleId")
+                        .IsRequired()
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("CreatedDate")

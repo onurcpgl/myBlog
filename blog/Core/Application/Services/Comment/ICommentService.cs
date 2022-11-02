@@ -12,6 +12,7 @@ namespace Application.Services
     {
         Task<bool> saveComment(CommentDto CommnetDto);
 
-        Task<Comment> getChildCommets(int id);
+        Task<Comment> getCommentById(int id);
+        Task<List<Comment>> CommentList();
     }
 }

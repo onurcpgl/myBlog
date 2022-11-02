@@ -1,7 +1,16 @@
 import { createApp } from 'vue'
-import App from './App.vue'
-import 'flowbite';
-// add this
-import './index.css'
+import { createPinia } from 'pinia'
 
-createApp(App).mount('#app')
+import App from './App.vue'
+import router from './router'
+
+import './assets/main.css'
+//Tailwind css + flowbite
+import './index.css'
+import 'flowbite';
+const app = createApp(App)
+
+app.use(createPinia())
+app.use(router)
+
+app.mount('#app')

@@ -31,5 +31,19 @@ namespace API.Controllers
             }
         }
 
+        [HttpGet("/comment")]
+        public async Task<IActionResult> CommentList()
+        {
+            var result = await _commentService.CommentList();
+            return Ok(result);
+
+        }
+        [HttpGet("/comment/{id}")]
+        public async Task<IActionResult> GetArticleListById(int id)
+        {
+            var result = await _commentService.getCommentById(id);
+            return Ok(result);
+        }
+
     }
 }

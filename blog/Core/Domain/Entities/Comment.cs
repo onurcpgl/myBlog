@@ -18,8 +18,6 @@ namespace Domain.Entities
         public int? ParentCommentId { get; set; }
         public ICollection<Comment> ChildComment { get; set; }
         public Article Article { get; set; }
-        public int ArticleId { get; set; }
-
-
+        public int? ArticleId { get; set; }
     }
 }
