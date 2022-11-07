@@ -1,5 +1,7 @@
 ﻿using Application.DataTransferObject;
 using Application.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,9 +30,9 @@ namespace API.Controllers
                 return Ok(true);
             }
         }
-
-
+        
         [HttpGet("/article")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> ArticleList()
         {
             var result = await _articleService.articleList();

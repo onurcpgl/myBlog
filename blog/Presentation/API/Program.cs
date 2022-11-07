@@ -29,29 +29,20 @@ builder.Services.AddControllersWithViews()
     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
 );
 
-//JWT
 
-builder.Services.AddAuthentication(x =>
-{
-    {
-        x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-        x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    }
-})
+//JWT
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
 
-        options.TokenValidationParameters = new()
+        options.TokenValidationParameters  = new TokenValidationParameters
         {
-            ValidateAudience = true,
-            ValidateIssuer = true,
-            ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-
-            ValidAudience = builder.Configuration["Token:Audience"],
-            ValidIssuer = builder.Configuration["Token:Issuer"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:SecurityKey"]))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8
+                .GetBytes(builder.Configuration.GetSection("Token:SecurityKey").Value)),
+            ValidateIssuer = false,
+            ValidateAudience = false
         }
-    );
+);;
 
 
 var app = builder.Build();
@@ -63,13 +54,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
+//Cors config
 app.UseCors(x => x
                .AllowAnyMethod()
                .AllowAnyHeader()
                .SetIsOriginAllowed(origin => true) // allow any origin
                .AllowCredentials()); // allow credentials
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

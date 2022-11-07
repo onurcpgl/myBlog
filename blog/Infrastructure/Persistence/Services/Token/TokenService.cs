@@ -30,23 +30,19 @@ namespace Persistence.Services.Token
 
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, user.firstName),
-                new Claim(ClaimTypes.Surname, user.lastName),
-                new Claim(ClaimTypes.Email, user.emailAdress),
-                new Claim(ClaimTypes.Role, user.role),
-            };            
-
+                new Claim(ClaimTypes.Role , user.role),
+                new Claim(ClaimTypes.Name , user.firstName),
+            };
+            
+               
             SymmetricSecurityKey securityKey = new(Encoding.UTF8.GetBytes(_configuration["Token:SecurityKey"]));
-
-            SigningCredentials signingCredentials = new(securityKey, SecurityAlgorithms.HmacSha256);
+            
+            var creds = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha512Signature);
 
             JwtSecurityToken securityToken = new(
                 claims: claims,
-                audience: _configuration["Token:Auidience"],
-                issuer: _configuration["Token:Issuer"],
                 expires: DateTime.UtcNow.AddDays(7),
-                signingCredentials: signingCredentials
-
+                signingCredentials: creds
             );
 
             JwtSecurityTokenHandler tokenHandler = new();
