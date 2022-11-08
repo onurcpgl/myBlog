@@ -18,6 +18,7 @@ namespace API.Controllers
         }
 
         [HttpPost("/article")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> AddArticle([FromBody] ArticleDto articleDto)
         {
             var result = await _articleService.saveArticle(articleDto);
@@ -32,7 +33,7 @@ namespace API.Controllers
         }
         
         [HttpGet("/article")]
-        [Authorize(Roles = "admin")]
+        [AllowAnonymous]
         public async Task<IActionResult> ArticleList()
         {
             var result = await _articleService.articleList();
@@ -42,6 +43,7 @@ namespace API.Controllers
 
 
         [HttpGet("/article/{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetArticleListById(int id)
         {
             var result = await _articleService.getArticleListById(id);

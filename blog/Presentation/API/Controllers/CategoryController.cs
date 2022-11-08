@@ -1,5 +1,6 @@
 ﻿using Application.DataTransferObject;
 using Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,8 +15,9 @@ namespace API.Controllers
         {
             _categoryService = categoryService;
         }
-
+        
         [HttpPost("/category")]
+        [Authorize(Roles ="admin")]
         public async Task<IActionResult> AddCategory([FromBody] CategoryDto categoryDto)
         {
             var result = await _categoryService.saveCategory(categoryDto);
@@ -31,6 +33,7 @@ namespace API.Controllers
 
 
         [HttpGet("/category/{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> GetCategoryById(int id)
         {
             var category = await _categoryService.getCategoryById(id);

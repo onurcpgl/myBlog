@@ -52,3 +52,8 @@ C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\Microsoft.I
 C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\Infrastructure.dll
+C:\Users\onurc\Desktop\myBlog\blog\Presentation\API\bin\Debug\net6.0\Infrastructure.pdb

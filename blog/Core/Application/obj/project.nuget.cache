@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "FuHSJOCmIj/MKUaMCo+NXn/syGoQInDmZY58cjp2H1HsNstBr4Ztj67qj8OBj5EH5Yn7I4S/zLqj6XM6lWwljg==",
+  "dgSpecHash": "ZcOZgCrI/NDypIMiNNmXy+cK+PceHMC1HKp0VrEjuHQJsJXMCp9mi4UwPxZJZkep/AjSIzzUTIrCinhJGapKPg==",
   "success": true,
   "projectFilePath": "C:\\Users\\onurc\\Desktop\\myBlog\\blog\\Core\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\onurc\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\onurc\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
+    "C:\\Users\\onurc\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\onurc\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.2\\fluentvalidation.dependencyinjectionextensions.11.2.2.nupkg.sha512",
     "C:\\Users\\onurc\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\onurc\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.10\\microsoft.entityframeworkcore.6.0.10.nupkg.sha512",
     "C:\\Users\\onurc\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.10\\microsoft.entityframeworkcore.abstractions.6.0.10.nupkg.sha512",

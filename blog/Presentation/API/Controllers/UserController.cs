@@ -1,7 +1,9 @@
 ﻿using Application.DataTransferObject;
 using Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace API.Controllers
 {
@@ -13,7 +15,7 @@ namespace API.Controllers
 
         public UserController(IUserService userService)
         {
-            _userService = userService; 
+            _userService = userService;
         }
 
         [HttpPost("/user")]

@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "EAe6B19Erbp3rAjpjnykk5TLo1OhDkcKyF7XnQF18xWAQTVvPfIjsCs1r/rNylJ3gtTRqfnGQtvnmbaaorOtKg==",
+  "dgSpecHash": "eV1dGGL78KYR6AujOHnVYr1ndk6u6zpWmqM5UyJ76Zc6aTT9WpLnWMcl+36bDiaX16vTu8W3vEhmt+eRxrZ5og==",
   "success": true,
   "projectFilePath": "C:\\Users\\onurc\\Desktop\\myBlog\\blog\\Infrastructure\\Persistence\\Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\onurc\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\onurc\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
+    "C:\\Users\\onurc\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\onurc\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.2\\fluentvalidation.dependencyinjectionextensions.11.2.2.nupkg.sha512",
     "C:\\Users\\onurc\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\onurc\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.10\\microsoft.aspnetcore.authentication.jwtbearer.6.0.10.nupkg.sha512",
     "C:\\Users\\onurc\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
