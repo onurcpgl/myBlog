@@ -18,7 +18,7 @@ namespace API.Controllers
 
 
         [HttpPost("/comment")]
-        public async Task<IActionResult> AddComment([FromBody] CommentDto commentDto)
+        public async Task<IActionResult> AddComment([FromBody] CommentDto commentDto) 
         {
            
             var result = await _commentService.saveComment(commentDto);
