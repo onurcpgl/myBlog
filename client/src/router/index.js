@@ -3,6 +3,11 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from "../views/LoginView.vue";
 import RegisterView from "../views/RegisterView.vue";
 import AdministrationView from "../views/AdministrationView.vue";
+
+import { useLoginStore } from "../stores/login";
+
+
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -22,7 +27,17 @@ const router = createRouter({
     {
       path: '/login',
       name: 'login',
-      component:LoginView
+      component:LoginView,
+      beforeEnter:(to, from, next) =>{
+        const loginStore = useLoginStore();
+          if(loginStore.isLogin != false)
+          {
+            next("/")
+          }else
+          {
+            next();
+          }
+      }
     },
     {
       path: '/register',
@@ -33,8 +48,11 @@ const router = createRouter({
       path: '/admin',
       name: 'admin',
       component:AdministrationView
-    }
+    },
+  
   ]
 })
+
+
 
 export default router
