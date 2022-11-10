@@ -1,16 +1,18 @@
 <script setup>
+import router from "../router";
 import { useLoginStore } from "../stores/login";
 const loginStore = useLoginStore();
 
 function LoginHandler(params) {
     loginStore.startLogin();
+    router.push({ path: `/` })
 }
 </script>
 
 <template>
 
  <div class="login_form">
-    <form @submit.prevent="LoginHandler()">
+    <form @submit="LoginHandler()">
     <div class="mb-6">
         <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
         <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" required="">

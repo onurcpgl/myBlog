@@ -1,6 +1,14 @@
 <script setup>
 import {  } from "vue";
+import { useLoginStore } from "../../stores/login";
 const props = defineProps(['isActiveLogin']);
+const userStore = useLoginStore();
+
+function logoutUser() {
+  userStore.logout();
+  router.push({ path: `/` })
+}
+
 </script>
 <template>
 
@@ -50,7 +58,7 @@ const props = defineProps(['isActiveLogin']);
               >Yönetim Paneli</RouterLink
             >
           </li>
-          <li v-if="!props.isActiveLogin">
+          <li v-if="!userStore.userToken">
             <RouterLink
               to="/register"
               class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
@@ -58,11 +66,19 @@ const props = defineProps(['isActiveLogin']);
             >
           </li>
           
-          <li v-if="!props.isActiveLogin">
+          <li v-if="!userStore.userToken">
             <RouterLink
               to="/login"
               class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >Login</RouterLink
+            >
+          </li>
+          <li v-if="userStore.userToken">
+            <RouterLink
+              to="/"
+              @click="logoutUser()"
+              class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              >Logout</RouterLink
             >
           </li>
         </ul>

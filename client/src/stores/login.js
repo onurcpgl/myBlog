@@ -5,12 +5,20 @@ import { loginAxios } from "../service/Login/login";
 export const useLoginStore = defineStore('login', () => {
   const isLogin = ref(false);
   const isAdmin = ref(false);
+  const userToken = ref(localStorage.getItem("token"));
+
   
   async function startLogin(params) {
     const result = await loginAxios();
+    console.log(result.data.result.accessToken);
+    localStorage.setItem("token",result.data.result.accessToken);
     isLogin.value = true;
     return result; 
   }
+  async function logout(params) {
+    localStorage.removeItem("token");
+    isLogin.value = false; 
+  }
 
-  return { isLogin, startLogin }
+  return { isLogin, startLogin,logout,userToken }
 })

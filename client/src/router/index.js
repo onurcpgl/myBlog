@@ -30,7 +30,7 @@ const router = createRouter({
       component:LoginView,
       beforeEnter:(to, from, next) =>{
         const loginStore = useLoginStore();
-          if(loginStore.isLogin != false)
+          if(loginStore.userToken != null)
           {
             next("/")
           }else
