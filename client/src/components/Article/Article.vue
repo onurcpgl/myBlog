@@ -42,7 +42,8 @@ onMounted(async() => {
             <!-- <img class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"  alt=""> -->
             <div class="flex flex-col justify-conter p-4 leading-normal ">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{article.title.slice(0,25)}}</h5>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 max-w-ful ">{{article.contents.slice(0,125)}}</p>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 max-w-ful ">{{article.contents.slice(0,125)}}... </p>
+                <a href="" style="color:blue;">Devamını Oku</a>
             </div>
         </a> 
     </div>

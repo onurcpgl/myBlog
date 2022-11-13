@@ -6,6 +6,7 @@ const loginStore = useLoginStore();
 function LoginHandler(params) {
     loginStore.startLogin();
     router.push({ path: `/` })
+
 }
 </script>
 

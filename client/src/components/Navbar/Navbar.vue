@@ -7,6 +7,7 @@ const userStore = useLoginStore();
 function logoutUser() {
   userStore.logout();
   router.push({ path: `/` })
+  
 }
 
 </script>

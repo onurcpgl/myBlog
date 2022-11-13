@@ -13,11 +13,13 @@ export const useLoginStore = defineStore('login', () => {
     console.log(result.data.result.accessToken);
     localStorage.setItem("token",result.data.result.accessToken);
     isLogin.value = true;
+    window.location.reload();
     return result; 
   }
   async function logout(params) {
     localStorage.removeItem("token");
     isLogin.value = false; 
+    window.location.reload();
   }
 
   return { isLogin, startLogin,logout,userToken }
